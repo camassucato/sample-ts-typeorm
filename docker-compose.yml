@@ -1,0 +1,23 @@
+version: '3'
+services:
+  postgres:
+    container_name: postgres-nodejs
+    image: postgres:11
+    restart: unless-stopped
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+    volumes:
+      - postgres-data-backend:/data
+    networks:
+      - app-connect
+
+volumes:
+  postgres-data-backend:
+
+networks:
+  app-connect:
+    driver: bridge
