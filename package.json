@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "dev:server": "tsnd --inspect --transpileOnly --ignore-watch node_modules src/server.ts",
+    "dev": "tsnd --inspect --transpileOnly --ignore-watch node_modules src/server.ts",
     "typeorm": "tsnd ./node_modules/typeorm/cli.js"
   },
   "dependencies": {
